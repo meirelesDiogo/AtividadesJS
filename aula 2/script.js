@@ -3,13 +3,15 @@ function adicionarTarefa() {
         let mensagem = "Tarefa adicionada com sucesso!"; //Declara variavel e coloca o valor nela
 
         let input = document.getElementById("inputTarefa"); //Declara variavel e coloca dentro dela o input
-        let tarefa = input.value; // declara variavel tarefa pegando tudo q o usuario digitou dentro do input
+        let tarefa = input.value.trim(); // declara variavel tarefa pegando tudo q o usuario digitou dentro do input
 
         if (!tarefa) {
           document.getElementById("mensagem").textContent =
             "Campo Vazio. Digite Algo para colocar na lista";
+             document.getElementById("mensagem").style.color="red"
         } else {
           document.getElementById("mensagem").textContent = mensagem; // Dps disso pega o valor da variavel mensagem e coloca no P q ta cm o id mensagem
+          document.getElementById("mensagem").style.color="green"
           let listaTarefas = document.getElementById("Lista"); //Declara variavel e coloca dentro dela a UL
           let novaTarefa = document.createElement("li"); //Declara variavel e coloca dentro dela a opção de criar uma LI
           novaTarefa.textContent = tarefa; // Coloca dentro da variavel nova tarefa oq o usuario digitou dentro do input
